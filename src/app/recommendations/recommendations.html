@@ -1,0 +1,49 @@
+<div class="recommendations-container">
+
+    <!-- Search / Filter Section -->
+    <div class="search-section">
+        <div class="input-group">
+            <label>Please enter a description of a book:</label>
+            <input type="text" [(ngModel)]="searchQuery" placeholder="A book about World War One" class="form-control">
+        </div>
+        <div class="input-group">
+            <label>Select a category:</label>
+            <select class="form-control">
+                <option>All</option>
+                <option>Fiction</option>
+                <option>History</option>
+                <option>Science</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Select an emotional tone:</label>
+            <select class="form-control">
+                <option>All</option>
+                <option>Happy</option>
+                <option>Sad</option>
+                <option>Suspenseful</option>
+            </select>
+        </div>
+        <button class="btn btn-find" (click)="findRecommendations()">Find recommendations</button>
+    </div>
+
+    <!-- Recommendations Grid -->
+    <div class="results-section">
+        <h2 class="section-title">Recommendations</h2>
+        <div class="tabs">
+            <span class="tab active"><i class="icon"></i> Recommended books</span>
+        </div>
+
+        <div class="books-grid">
+            <div class="book-card" *ngFor="let book of recommendedBooks">
+                <div class="book-cover">
+                    <img [src]="book.image" [alt]="book.title">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">{{ book.title }}</h3>
+                    <p class="book-author">{{ book.author }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

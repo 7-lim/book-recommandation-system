@@ -1,0 +1,99 @@
+<div class="home-container">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-subtitle">Learn & Grow</span>
+            <h1 class="hero-title">You're Only One Book Away From a Good Mood</h1>
+            <p class="hero-desc">The more that you read, the more things you will know. The more that you learn, the
+                more places you'll go.</p>
+            <button class="btn btn-primary">Find Your Book</button>
+        </div>
+        <div class="hero-images">
+            <div class="book-card-hero" *ngFor="let book of heroBooks">
+                <img [src]="book.image" [alt]="book.title">
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Section -->
+    <section class="section discover-section">
+        <div class="section-header">
+            <h2 class="section-title">Discover Your New Book</h2>
+            <p class="section-subtitle">Find your next favorite read from our curated collection.</p>
+        </div>
+        <div class="books-grid">
+            <div class="book-card" *ngFor="let book of newBooks">
+                <div class="book-image">
+                    <img [src]="book.image" [alt]="book.title">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">{{ book.title }}</h3>
+                    <p class="book-author">{{ book.author }}</p>
+                    <p class="book-price">{{ book.price }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer">
+            <button class="btn btn-secondary">Explore More</button>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section categories-section">
+        <h2 class="section-title">Choose By Category</h2>
+        <div class="categories-grid">
+            <div class="category-card" *ngFor="let cat of categories"
+                [style.backgroundImage]="'url(' + cat.image + ')'">
+                <div class="category-overlay">
+                    <h3 class="category-name">{{ cat.name }}</h3>
+                    <p class="category-count">{{ cat.count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-footer">
+            <button class="btn btn-secondary">View All Categories</button>
+        </div>
+    </section>
+
+    <!-- Featured Book Section -->
+    <section class="section featured-section">
+        <div class="featured-container">
+            <div class="featured-image">
+                <img [src]="featuredBook.image" [alt]="featuredBook.title">
+            </div>
+            <div class="featured-content">
+                <span class="featured-label">Editors' Pick</span>
+                <h2 class="featured-title">{{ featuredBook.title }}</h2>
+                <p class="featured-author">by {{ featuredBook.author }}</p>
+                <p class="featured-desc">{{ featuredBook.desc }}</p>
+                <button class="btn btn-primary">Read Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="section author-section">
+        <h2 class="section-title text-left">Author of the Month</h2>
+        <div class="author-container">
+            <div class="author-profile">
+                <img [src]="author.image" [alt]="author.name" class="author-img">
+            </div>
+            <div class="author-info">
+                <h2 class="author-name">{{ author.name }}</h2>
+                <p class="author-desc">{{ author.desc }}</p>
+                <button class="btn btn-primary">View Profile</button>
+            </div>
+            <div class="author-books">
+                <div class="mini-book-card" *ngFor="let book of author.books">
+                    <img [src]="book.image" [alt]="book.title">
+                    <div class="mini-book-info">
+                        <span class="mini-book-title">{{ book.title }}</span>
+                        <span class="mini-book-author">{{ book.author }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

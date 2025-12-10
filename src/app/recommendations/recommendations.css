@@ -1,0 +1,151 @@
+:host {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.recommendations-container {
+    max-width: 1400px;
+    /* Wide layout */
+    margin: 0 auto;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    gap: 1.5rem;
+    background-color: #f8f9fa;
+    /* Light grey background */
+    padding: 1.5rem;
+    border-radius: 4px;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-control {
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.btn-find {
+    background-color: #dfe6ed;
+    /* Light blue-grey */
+    color: #000;
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 46px;
+    /* Match input height roughly */
+    white-space: nowrap;
+}
+
+.btn-find:hover {
+    background-color: #cfd8e1;
+}
+
+/* Results Section */
+.section-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.tabs {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    color: #495057;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.tab.active {
+    background-color: #e9ecef;
+    color: #495057;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* Square-ish covers based on image */
+    background-color: #f1f3f5;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 0.5rem;
+}
+
+.book-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem 0;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.book-author {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 0;
+}
